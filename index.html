@@ -100,75 +100,52 @@
       .flower {
         position: absolute;
         bottom: 110px;
-        width: 90px;
-        height: 95px;
+        width: 70px;
+        height: 80px;
         display: flex;
         align-items: flex-end;
         justify-content: center;
-        filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.25));
       }
 
       .petal {
         position: absolute;
         bottom: 0;
-        width: 40px;
-        height: 70px;
-        background: linear-gradient(180deg, #ff7a93 0%, var(--petal) 45%, var(--petal-dark) 100%);
-        border-radius: 65% 65% 45% 45%;
+        width: 30px;
+        height: 55px;
+        background: var(--petal);
+        border-radius: 50% 50% 40% 40%;
         transform-origin: bottom center;
         animation: bloom 4s ease-in-out infinite;
       }
 
-      .petal.back {
-        width: 42px;
-        height: 74px;
-        opacity: 0.95;
-      }
-
-      .petal.front {
-        width: 44px;
-        height: 72px;
-        background: linear-gradient(180deg, #ff9ab1 0%, var(--petal) 55%, var(--petal-dark) 100%);
-      }
-
       .petal:nth-child(1) {
-        left: 2px;
-        transform: rotate(-28deg) scaleY(0.88);
+        left: 0;
+        transform: rotate(-18deg) scaleY(0.85);
         animation-delay: -0.6s;
+        background: linear-gradient(180deg, var(--petal) 0%, var(--petal-dark) 100%);
       }
 
       .petal:nth-child(2) {
-        left: 18px;
-        transform: rotate(-8deg) scaleY(0.95);
+        left: 20px;
+        transform: rotate(0deg);
         animation-delay: -1.2s;
       }
 
       .petal:nth-child(3) {
-        left: 34px;
-        transform: rotate(10deg) scaleY(1);
+        left: 40px;
+        transform: rotate(18deg) scaleY(0.9);
         animation-delay: -1.8s;
-      }
-
-      .petal:nth-child(4) {
-        left: 10px;
-        transform: translateY(6px) rotate(-2deg) scaleY(0.9);
-        animation-delay: -1.4s;
-      }
-
-      .petal:nth-child(5) {
-        left: 26px;
-        transform: translateY(6px) rotate(6deg) scaleY(0.92);
-        animation-delay: -2s;
+        background: linear-gradient(180deg, var(--petal) 0%, var(--petal-dark) 100%);
       }
 
       .center {
         position: absolute;
-        bottom: 12px;
-        width: 22px;
-        height: 18px;
-        background: radial-gradient(circle, #ffd98a 0%, var(--center) 60%, #d1902f 100%);
-        border-radius: 50% 50% 60% 60%;
-        opacity: 0.75;
+        bottom: 8px;
+        width: 16px;
+        height: 16px;
+        background: var(--center);
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(248, 196, 92, 0.6);
       }
 
       .message {
@@ -183,10 +160,10 @@
       @keyframes bloom {
         0%,
         100% {
-          transform: translateY(6px) scaleY(0.78) rotate(var(--angle, 0deg));
+          transform: translateY(0) scaleY(0.8) rotate(var(--angle, 0deg));
         }
         50% {
-          transform: translateY(-6px) scaleY(1.04) rotate(var(--angle, 0deg));
+          transform: translateY(-8px) scaleY(1.05) rotate(var(--angle, 0deg));
         }
       }
 
@@ -220,11 +197,9 @@
         <div class="leaf left"></div>
         <div class="leaf right"></div>
         <div class="flower">
-          <span class="petal back" style="--angle: -28deg"></span>
-          <span class="petal back" style="--angle: -8deg"></span>
-          <span class="petal back" style="--angle: 10deg"></span>
-          <span class="petal front" style="--angle: -2deg"></span>
-          <span class="petal front" style="--angle: 6deg"></span>
+          <span class="petal" style="--angle: -18deg"></span>
+          <span class="petal" style="--angle: 0deg"></span>
+          <span class="petal" style="--angle: 18deg"></span>
           <span class="center"></span>
         </div>
       </div>
@@ -233,11 +208,9 @@
         <div class="leaf left"></div>
         <div class="leaf right"></div>
         <div class="flower">
-          <span class="petal back" style="--angle: -30deg"></span>
-          <span class="petal back" style="--angle: -10deg"></span>
-          <span class="petal back" style="--angle: 12deg"></span>
-          <span class="petal front" style="--angle: -4deg"></span>
-          <span class="petal front" style="--angle: 8deg"></span>
+          <span class="petal" style="--angle: -20deg"></span>
+          <span class="petal" style="--angle: 0deg"></span>
+          <span class="petal" style="--angle: 20deg"></span>
           <span class="center"></span>
         </div>
       </div>
@@ -246,11 +219,9 @@
         <div class="leaf left"></div>
         <div class="leaf right"></div>
         <div class="flower">
-          <span class="petal back" style="--angle: -32deg"></span>
-          <span class="petal back" style="--angle: -12deg"></span>
-          <span class="petal back" style="--angle: 14deg"></span>
-          <span class="petal front" style="--angle: -6deg"></span>
-          <span class="petal front" style="--angle: 10deg"></span>
+          <span class="petal" style="--angle: -22deg"></span>
+          <span class="petal" style="--angle: 0deg"></span>
+          <span class="petal" style="--angle: 22deg"></span>
           <span class="center"></span>
         </div>
       </div>
