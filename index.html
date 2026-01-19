@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramo de tulipanes</title>
+    <style>
+      :root {
+        --bg: #0d1b1e;
+        --stem: #3c7a57;
+        --leaf: #2e6b4a;
+        --petal: #f05d7b;
+        --petal-dark: #d94e6d;
+        --center: #f8c45c;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(circle at top, #1c3b3d 0%, var(--bg) 60%);
+        font-family: "Segoe UI", sans-serif;
+        color: #f9f4ef;
+      }
+
+      .bouquet {
+        position: relative;
+        width: 320px;
+        height: 380px;
+      }
+
+      .tulip {
+        position: absolute;
+        width: 80px;
+        height: 220px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        transform-origin: bottom center;
+        animation: sway 6s ease-in-out infinite;
+      }
+
+      .tulip:nth-child(1) {
+        left: 20px;
+        bottom: 0;
+        transform: rotate(-10deg);
+        animation-delay: -1s;
+      }
+
+      .tulip:nth-child(2) {
+        left: 110px;
+        bottom: 10px;
+        transform: rotate(2deg);
+        animation-delay: -2.5s;
+      }
+
+      .tulip:nth-child(3) {
+        left: 200px;
+        bottom: 0;
+        transform: rotate(12deg);
+        animation-delay: -3.5s;
+      }
+
+      .stem {
+        position: absolute;
+        bottom: 0;
+        width: 8px;
+        height: 140px;
+        background: linear-gradient(180deg, #4b9a6b 0%, var(--stem) 100%);
+        border-radius: 12px;
+      }
+
+      .leaf {
+        position: absolute;
+        bottom: 30px;
+        width: 40px;
+        height: 90px;
+        background: linear-gradient(135deg, #3f8f62, var(--leaf));
+        border-radius: 80% 20% 80% 20%;
+        transform-origin: bottom center;
+      }
+
+      .leaf.left {
+        left: -35px;
+        transform: rotate(-25deg);
+      }
+
+      .leaf.right {
+        right: -35px;
+        transform: rotate(25deg) scaleX(-1);
+      }
+
+      .flower {
+        position: absolute;
+        bottom: 110px;
+        width: 90px;
+        height: 95px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.25));
+      }
+
+      .petal {
+        position: absolute;
+        bottom: 0;
+        width: 40px;
+        height: 70px;
+        background: linear-gradient(180deg, #ff7a93 0%, var(--petal) 45%, var(--petal-dark) 100%);
+        border-radius: 65% 65% 45% 45%;
+        transform-origin: bottom center;
+        animation: bloom 4s ease-in-out infinite;
+      }
+
+      .petal.back {
+        width: 42px;
+        height: 74px;
+        opacity: 0.95;
+      }
+
+      .petal.front {
+        width: 44px;
+        height: 72px;
+        background: linear-gradient(180deg, #ff9ab1 0%, var(--petal) 55%, var(--petal-dark) 100%);
+      }
+
+      .petal:nth-child(1) {
+        left: 2px;
+        transform: rotate(-28deg) scaleY(0.88);
+        animation-delay: -0.6s;
+      }
+
+      .petal:nth-child(2) {
+        left: 18px;
+        transform: rotate(-8deg) scaleY(0.95);
+        animation-delay: -1.2s;
+      }
+
+      .petal:nth-child(3) {
+        left: 34px;
+        transform: rotate(10deg) scaleY(1);
+        animation-delay: -1.8s;
+      }
+
+      .petal:nth-child(4) {
+        left: 10px;
+        transform: translateY(6px) rotate(-2deg) scaleY(0.9);
+        animation-delay: -1.4s;
+      }
+
+      .petal:nth-child(5) {
+        left: 26px;
+        transform: translateY(6px) rotate(6deg) scaleY(0.92);
+        animation-delay: -2s;
+      }
+
+      .center {
+        position: absolute;
+        bottom: 12px;
+        width: 22px;
+        height: 18px;
+        background: radial-gradient(circle, #ffd98a 0%, var(--center) 60%, #d1902f 100%);
+        border-radius: 50% 50% 60% 60%;
+        opacity: 0.75;
+      }
+
+      .message {
+        margin-top: 32px;
+        font-size: 2.5rem;
+        font-weight: 600;
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+        text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      }
+
+      @keyframes bloom {
+        0%,
+        100% {
+          transform: translateY(6px) scaleY(0.78) rotate(var(--angle, 0deg));
+        }
+        50% {
+          transform: translateY(-6px) scaleY(1.04) rotate(var(--angle, 0deg));
+        }
+      }
+
+      @keyframes sway {
+        0%,
+        100% {
+          transform: rotate(var(--sway, 0deg));
+        }
+        50% {
+          transform: rotate(calc(var(--sway, 0deg) + 4deg));
+        }
+      }
+
+      .tulip:nth-child(1) {
+        --sway: -8deg;
+      }
+
+      .tulip:nth-child(2) {
+        --sway: 2deg;
+      }
+
+      .tulip:nth-child(3) {
+        --sway: 10deg;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bouquet">
+      <div class="tulip">
+        <div class="stem"></div>
+        <div class="leaf left"></div>
+        <div class="leaf right"></div>
+        <div class="flower">
+          <span class="petal back" style="--angle: -28deg"></span>
+          <span class="petal back" style="--angle: -8deg"></span>
+          <span class="petal back" style="--angle: 10deg"></span>
+          <span class="petal front" style="--angle: -2deg"></span>
+          <span class="petal front" style="--angle: 6deg"></span>
+          <span class="center"></span>
+        </div>
+      </div>
+      <div class="tulip">
+        <div class="stem"></div>
+        <div class="leaf left"></div>
+        <div class="leaf right"></div>
+        <div class="flower">
+          <span class="petal back" style="--angle: -30deg"></span>
+          <span class="petal back" style="--angle: -10deg"></span>
+          <span class="petal back" style="--angle: 12deg"></span>
+          <span class="petal front" style="--angle: -4deg"></span>
+          <span class="petal front" style="--angle: 8deg"></span>
+          <span class="center"></span>
+        </div>
+      </div>
+      <div class="tulip">
+        <div class="stem"></div>
+        <div class="leaf left"></div>
+        <div class="leaf right"></div>
+        <div class="flower">
+          <span class="petal back" style="--angle: -32deg"></span>
+          <span class="petal back" style="--angle: -12deg"></span>
+          <span class="petal back" style="--angle: 14deg"></span>
+          <span class="petal front" style="--angle: -6deg"></span>
+          <span class="petal front" style="--angle: 10deg"></span>
+          <span class="center"></span>
+        </div>
+      </div>
+    </div>
+    <div class="message">Te amo</div>
+  </body>
+</html>
